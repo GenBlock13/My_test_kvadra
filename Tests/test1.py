@@ -15,8 +15,10 @@ def solve_linear(b, c):
 def test_linear():
     assert solve_linear(-7, 7) == 'Equation root is 1.0'
 
+
 def test_linear_zero1():
     assert solve_linear(0, 7) == 'No solution'
+
 
 def test_linear_zero2():
     assert solve_linear(0, 0) == 'Any X solves equation'
@@ -24,4 +26,3 @@ def test_linear_zero2():
 
 if __name__ == '__main__':
     pytest(main)
-
