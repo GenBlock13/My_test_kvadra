@@ -14,6 +14,7 @@ STR_EXP = 'exp'
 STR_NAN = 'nan'
 STR_INF = 'inf'
 
+
 class Token:
     def __init__(self, type, value, lenght):
         self.type = type
@@ -38,4 +39,3 @@ class Token:
             result += STR_INF + ': '
         result += self.value
         return result
-
