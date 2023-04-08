@@ -39,3 +39,8 @@ class Token:
             result += STR_INF + ': '
         result += self.value
         return result
+
+    def empty(self):
+        self.type = TOKEN_EMPTY
+        self.value = ''
+        self.lenght = 0
