@@ -2,3 +2,10 @@ n = (0..9) | (1..9) & [0..9];
 token_0_9 = 0..9
 token_1_9 = 1..9
 tokens_0_9 = (0..9)+
+token_sign = + | -
+token_DOT = .
+token_EXP = e
+
+token n = token_0_9 | (token_1_9 & (token_0_9+))
+token z = [token_sign] & token n
+token q = ([token_sign] token n [token_DOT] [tokens_0_9] ) | ([token_sign] [token n] token_DOT tokens_0_9 )
