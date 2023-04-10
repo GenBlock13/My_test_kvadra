@@ -14,18 +14,22 @@ class Tokenizer_N(TokenizerInterface):
 
     def interpret(self, string, position):
         if not self._check_bounds(string, position):
-            return EMPTY
+            return ERROR
         current = position
 
         token_1_9 = self.tokenizer_1_9.interpret(string, position)
         if token_1_9.type != TOKEN_EMPTY:
             token_0_9_plus = self.tokenizer_0_9_plus.interpret(string, position + token_1_9.lenght)
+
             if token_0_9_plus.type != TOKEN_EMPTY:
-                return Token(TOKEN_INTEGER, token_1_9.value + token_0_9_plus.value,
+                return Token(TOKEN_NUMBER, token_1_9.value + token_0_9_plus.value,
                              token_1_9.lenght + token_0_9_plus.lenght)
             else:
                 return token_1_9
         else:
             token_0_9 = self.tokenizer_0_9.interpret(string, position)
+
             if token_0_9.type != TOKEN_EMPTY:
                 return token_0_9
+            else:
+                return ERROR

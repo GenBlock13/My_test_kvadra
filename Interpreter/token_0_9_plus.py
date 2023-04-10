@@ -12,7 +12,7 @@ class Tokenizer0_9_plus(TokenizerInterface):
 
     def interpret(self, string, position):
         if not self._check_bounds(string, position):
-            return EMPTY
+            return ERROR
         current = position
 
         token = self.tokenizer.interpret(string, position)
@@ -21,8 +21,8 @@ class Tokenizer0_9_plus(TokenizerInterface):
                 current += token.lenght
                 token = self.tokenizer.interpret(string, current)
             else:
-                return Token(TOKEN_INTEGER, string[position:], len(string) - position)
+                return Token(TOKEN_NUMBER, string[position:], len(string) - position)
 
 
 
-        return Token(TOKEN_INTEGER, string[position: current], current - position)
+        return Token(TOKEN_NUMBER, string[position: current], current - position)

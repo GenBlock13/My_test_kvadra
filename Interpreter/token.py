@@ -1,6 +1,6 @@
 TOKEN_EMPTY = 0
 TOKEN_SIGN = 1
-TOKEN_INTEGER = 2
+TOKEN_NUMBER = 2
 TOKEN_DOT = 3
 TOKEN_EXP = 4
 TOKEN_NAN = 5
@@ -27,7 +27,7 @@ class Token:
             result += STR_EMPTY + ': '
         elif self.type == TOKEN_SIGN:
             result += STR_SIGN + ': '
-        elif self.type == TOKEN_INTEGER:
+        elif self.type == TOKEN_NUMBER:
             result += STR_INTEGER + ': '
         elif self.type == TOKEN_DOT:
             result += STR_DOT + ': '

@@ -13,7 +13,7 @@ class Tokenizer_Z(TokenizerInterface):
 
     def interpret(self, string, position):
         if not self._check_bounds(string, position):
-            return EMPTY
+            return ERROR
         current = position
 
         token_sign = self.tokenizer_sign.interpret(string, position)
@@ -23,6 +23,6 @@ class Tokenizer_Z(TokenizerInterface):
         token_n = self.tokenizer_n.interpret(string, position)
 
         if token_n.type != TOKEN_EMPTY:
-            return Token(TOKEN_INTEGER, token_sign.value + token_n.value, token_sign.lenght + token_n.lenght)
+            return Token(TOKEN_NUMBER, token_sign.value + token_n.value, token_sign.lenght + token_n.lenght)
         else:
-            return EMPTY
+            return ERROR

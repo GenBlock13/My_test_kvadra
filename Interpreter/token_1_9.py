@@ -10,10 +10,10 @@ class Tokenizer1_9(TokenizerInterface):
 
     def interpret(self, string, position):
         if  not self._check_bounds(string, position):
-            return EMPTY
+            return ERROR
 
 
         if string[position] in DIGITS_1_9:
-            return Token(TOKEN_INTEGER, string[position], 1)
+            return Token(TOKEN_NUMBER, string[position], 1)
         else:
             return Token(TOKEN_EMPTY, '', 0)

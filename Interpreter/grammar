@@ -8,4 +8,5 @@ token_EXP = e
 
 token n = token_0_9 | (token_1_9 & (token_0_9+))
 token z = [token_sign] & token n
-token q = ([token_sign] token n [token_DOT] [tokens_0_9] ) | ([token_sign] [token n] token_DOT tokens_0_9 )
+token q = (token_z [token_DOT] [tokens_0_9] ) | ([token_sign] token_DOT tokens_0_9 )
+token r = token q [token_EXP [token_sign] token_1_9 [token_0_9+]]

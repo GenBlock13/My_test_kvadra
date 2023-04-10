@@ -2,7 +2,7 @@ from abc import ABC
 from Interpreter.token import *
 
 
-EMPTY = Token(TOKEN_EMPTY, '', 0)
+ERROR = Token(TOKEN_EMPTY, '', 0)
 
 
 class TokenizerInterface:
