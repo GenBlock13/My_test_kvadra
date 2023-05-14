@@ -28,10 +28,10 @@ class Tokenizer_Q(TokenizerInterface):
                 token_frac = self.tokenizer_0_9_plus.interpret(string, current)
 
                 if token_frac.type != TOKEN_EMPTY:
-                    return Token(TOKEN_NUMBER, token_z.value + token_dot.value + token_frac.value,
+                    return Token(TOKEN_NUMBER, token_z.integer + token_dot.integer + token_frac.integer,
                                  token_z.lenght + token_dot.lenght + token_frac.lenght)
                 else:
-                    return Token(TOKEN_NUMBER, token_z.value + token_dot.value,
+                    return Token(TOKEN_NUMBER, token_z.integer + token_dot.integer,
                                  token_z.lenght + token_dot.lenght)
             else:
                 return token_z
@@ -46,7 +46,7 @@ class Tokenizer_Q(TokenizerInterface):
                 token_frac = self.tokenizer_0_9_plus.interpret(string, current)
 
                 if token_frac.type != TOKEN_EMPTY:
-                    return Token(TOKEN_NUMBER, token_sign.value + token_dot.value + token_frac.value,
+                    return Token(TOKEN_NUMBER, token_sign.integer + token_dot.integer + token_frac.integer,
                                  token_sign.lenght + token_dot.lenght + token_frac.lenght)
                 else:
                     return ERROR

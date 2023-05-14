@@ -33,3 +33,4 @@ def test_interpret1():
 
 def test_interpret1():
     assert str(t2.interpret(numb_test, 1)) == 'integer: 1'
+

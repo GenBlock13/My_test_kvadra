@@ -23,6 +23,6 @@ class Tokenizer_Z(TokenizerInterface):
         token_n = self.tokenizer_n.interpret(string, position)
 
         if token_n.type != TOKEN_EMPTY:
-            return Token(TOKEN_NUMBER, token_sign.value + token_n.value, token_sign.lenght + token_n.lenght)
+            return Token(TOKEN_NUMBER, token_sign.integer + token_n.integer, token_sign.lenght + token_n.lenght)
         else:
             return ERROR

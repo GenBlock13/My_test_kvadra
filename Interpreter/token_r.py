@@ -39,11 +39,11 @@ class Tokenizer_R(TokenizerInterface):
 
                     if token_0_9_plus.type != TOKEN_EMPTY:
                         return Token(TOKEN_NUMBER,
-                                     token_q.value + token_exp.value + token_sign.value + token_1_9.value + token_0_9_plus.value,
+                                     token_q.integer + token_exp.integer + token_sign.integer + token_1_9.integer + token_0_9_plus.integer,
                                      token_q.lenght + token_exp.lenght + token_sign.lenght + token_1_9.lenght + token_0_9_plus.lenght)
                     else:
                         return Token(TOKEN_NUMBER,
-                                     token_q.value + token_exp.value + token_sign.value + token_1_9.value,
+                                     token_q.integer + token_exp.integer + token_sign.integer + token_1_9.integer,
                                      token_q.lenght + token_exp.lenght + token_sign.lenght + token_1_9.lenght)
                 else:
                     return token_q
